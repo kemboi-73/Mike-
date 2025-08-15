@@ -361,7 +361,7 @@ body.nav-active { overflow: hidden; }
   margin-inline: auto;
 }
 
-.hero-banner .w-100 {
+/* .hero-banner .w-100 {
   mask-image: url("../images/Blob.svg");
   -webkit-mask-image: url("../images/Blog.svg");
   mask-repeat: no-repeat;
@@ -370,6 +370,12 @@ body.nav-active { overflow: hidden; }
   -webkit-mask-position: center;
   mask-size: auto;
   -webkit-mask-size: auto;
+} */
+
+
+.hero-banner .w-100 {
+  border-radius: 50%;
+  object-fit: cover;
 }
 
 .hero .shape {
