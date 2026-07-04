@@ -1,410 +1,370 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Mike Kemboi</title>
-<meta name="description" content="Mike Kemboi — a student's notes on learning technology, one project at a time.">
-<link rel="icon" href="data:,">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Manrope:wght@400;500;700&family=Caveat:wght@500;600&display=swap" rel="stylesheet">
+  <!-- 
+    - primary meta tags
+  -->
+  <title>Mike - Portfolio</title>
+  <meta name="title" content="Mike Kemboi — notes on learning technology, one step at a time.">
+  
 
-<style>
-  :root{
-    --paper: #F5F4EF;
-    --paper-raised: #FBFAF6;
-    --ink: #24272B;
-    --ink-soft: #565A57;
-    --line: #DEDAD0;
-    --pen: #35507A;
-    --pen-soft: #E6EAF1;
-    --mark: #B8863F;
-    --max: 760px;
-  }
+  <!-- ssssaadqq
+    - favicon
+  -->
+  <link rel="shortcut icon" href="assets/images/GQ8Vaf01.svg" type="image/svg+xml">
 
-  *{ box-sizing:border-box; }
-  html{ scroll-behavior:smooth; }
-  body{
-    margin:0;
-    background:var(--paper);
-    color:var(--ink);
-    font-family:'Manrope', sans-serif;
-    font-size:17px;
-    line-height:1.65;
-    -webkit-font-smoothing:antialiased;
-  }
-  h1,h2,h3{
-    font-family:'Fraunces', serif;
-    font-weight:500;
-    letter-spacing:-0.01em;
-    margin:0;
-  }
-  a{ color:inherit; }
-  :focus-visible{ outline:2px solid var(--pen); outline-offset:3px; }
+  <!-- 
+    - google font link
+  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;700&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/fff031d665.js" crossorigin="anonymous"></script>
+  <!-- 
+    - custom css link
+  -->
+  <link rel="stylesheet" href="./assets/css/style.css">
 
-  .wrap{
-    max-width:var(--max);
-    margin:0 auto;
-    padding:0 24px;
-  }
+  <!-- 
+    - preload images
+  -->
+  <link rel="preload" as="image" href="./assets/images/profile.png">
+  
 
-  /* ---------- nav ---------- */
-  .nav{
-    position:sticky; top:0; z-index:20;
-    background:rgba(245,244,239,0.9);
-    backdrop-filter:blur(6px);
-    border-bottom:1px solid var(--line);
-  }
-  .nav .wrap{
-    display:flex; align-items:center; justify-content:space-between;
-    padding-top:16px; padding-bottom:16px;
-    max-width:900px;
-  }
-  .nav-name{
-    font-family:'Fraunces', serif;
-    font-size:1.05rem;
-  }
-  .nav-links{
-    display:flex; gap:28px; list-style:none; margin:0; padding:0;
-  }
-  .nav-links a{
-    text-decoration:none;
-    font-size:0.92rem;
-    color:var(--ink-soft);
-    transition:color .15s ease;
-  }
-  .nav-links a:hover{ color:var(--pen); }
-
-  /* ---------- section w/ margin note ---------- */
-  section{ padding:72px 0; border-bottom:1px solid var(--line); }
-  section:last-of-type{ border-bottom:none; }
-
-  .section-head{
-    display:grid;
-    grid-template-columns:100px 1fr;
-    gap:20px;
-    align-items:start;
-    margin-bottom:36px;
-  }
-  .marginalia{
-    font-family:'Caveat', cursive;
-    font-size:1.35rem;
-    color:var(--mark);
-    line-height:1.2;
-    padding-top:6px;
-  }
-  .section-head h2{ font-size:1.7rem; }
-
-  @media (max-width:600px){
-    .section-head{ grid-template-columns:1fr; gap:4px; }
-    .marginalia{ padding-top:0; }
-  }
-
-  /* ---------- hero ---------- */
-  .hero{ padding-top:64px; border-bottom:1px solid var(--line); }
-  .hero-inner{
-    display:flex; gap:40px; align-items:center;
-  }
-  .hero-photo{
-    flex:0 0 132px;
-    width:132px; height:132px;
-    border-radius:50%;
-    background:var(--pen-soft);
-    border:1px solid var(--line);
-    overflow:hidden;
-  }
-  .hero-photo img{ width:100%; height:100%; object-fit:cover; display:block; }
-  .hero-text{ flex:1; min-width:0; }
-  .eyebrow{
-    font-size:0.85rem;
-    color:var(--ink-soft);
-    letter-spacing:0.02em;
-    margin-bottom:10px;
-  }
-  .eyebrow span{ color:var(--mark); font-family:'Caveat', cursive; font-size:1.15rem; }
-  h1.hero-title{
-    font-size:2.3rem;
-    line-height:1.2;
-    margin-bottom:14px;
-  }
-  .hero-text p{ color:var(--ink-soft); margin:0 0 22px; max-width:52ch; }
-
-  @media (max-width:560px){
-    .hero-inner{ flex-direction:column; align-items:flex-start; }
-    h1.hero-title{ font-size:1.9rem; }
-  }
-
-  .btn-row{ display:flex; gap:14px; flex-wrap:wrap; }
-  .btn{
-    display:inline-flex; align-items:center; gap:8px;
-    padding:11px 20px;
-    border-radius:6px;
-    font-size:0.92rem;
-    text-decoration:none;
-    border:1px solid var(--line);
-    transition:all .15s ease;
-  }
-  .btn-primary{ background:var(--ink); color:var(--paper-raised); border-color:var(--ink); }
-  .btn-primary:hover{ background:var(--pen); border-color:var(--pen); }
-  .btn-ghost{ background:transparent; color:var(--ink); }
-  .btn-ghost:hover{ border-color:var(--pen); color:var(--pen); }
-
-  /* ---------- about ---------- */
-  .about p{ color:var(--ink-soft); margin:0 0 16px; }
-  .about p:last-child{ margin-bottom:0; }
-
-  /* ---------- exploring grid ---------- */
-  .grid{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:1px;
-    background:var(--line);
-    border:1px solid var(--line);
-    border-radius:8px;
-    overflow:hidden;
-  }
-  .grid > div{
-    background:var(--paper-raised);
-    padding:26px;
-  }
-  .grid h3{
-    font-size:1.02rem;
-    margin-bottom:8px;
-  }
-  .grid p{ color:var(--ink-soft); font-size:0.94rem; margin:0; }
-  .grid .tag{
-    display:inline-block;
-    font-family:'Caveat', cursive;
-    color:var(--mark);
-    font-size:1.05rem;
-    margin-bottom:6px;
-  }
-  @media (max-width:600px){
-    .grid{ grid-template-columns:1fr; }
-  }
-
-  /* ---------- built ---------- */
-  .built-item{
-    padding:24px 0;
-    border-top:1px solid var(--line);
-  }
-  .built-item:first-child{ border-top:none; padding-top:0; }
-  .built-head{
-    display:flex; align-items:baseline; justify-content:space-between; gap:16px;
-    flex-wrap:wrap;
-    margin-bottom:8px;
-  }
-  .built-head h3{ font-size:1.15rem; }
-  .built-head a{
-    font-size:0.86rem;
-    color:var(--pen);
-    text-decoration:none;
-    white-space:nowrap;
-  }
-  .built-head a:hover{ text-decoration:underline; }
-  .built-item p{ color:var(--ink-soft); margin:0 0 10px; font-size:0.96rem; }
-  .stack{ display:flex; gap:8px; flex-wrap:wrap; }
-  .stack span{
-    font-size:0.78rem;
-    color:var(--ink-soft);
-    background:var(--paper-raised);
-    border:1px solid var(--line);
-    padding:3px 9px;
-    border-radius:20px;
-  }
-
-  /* ---------- goals ---------- */
-  .goals blockquote{
-    margin:0;
-    padding-left:20px;
-    border-left:2px solid var(--mark);
-    color:var(--ink);
-    font-family:'Fraunces', serif;
-    font-size:1.15rem;
-    font-weight:400;
-    line-height:1.5;
-  }
-  .goals p{ color:var(--ink-soft); margin-top:20px; }
-
-  /* ---------- contact ---------- */
-  .contact-list{ list-style:none; margin:0; padding:0; }
-  .contact-list li{
-    padding:16px 0;
-    border-top:1px solid var(--line);
-    display:flex; align-items:center; justify-content:space-between;
-    gap:12px;
-  }
-  .contact-list li:first-child{ border-top:none; }
-  .contact-label{ color:var(--ink-soft); font-size:0.88rem; }
-  .contact-value{
-    font-family:'Fraunces', serif;
-    font-size:1.05rem;
-    text-decoration:none;
-  }
-  .contact-value:hover{ color:var(--pen); }
-
-  footer{
-    padding:36px 0 48px;
-    text-align:center;
-    color:var(--ink-soft);
-    font-size:0.85rem;
-  }
-</style>
 </head>
+
 <body>
 
-  <nav class="nav">
-    <div class="wrap">
-      <span class="nav-name">Mike Kemboi</span>
-      <ul class="nav-links">
-        <li><a href="#about">About</a></li>
-        <li><a href="#exploring">Exploring</a></li>
-        <li><a href="#built">Built</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
+  <!-- 
+    - #HEADER
+  -->
+
+  <header class="header" data-header>
+    <div class="container">
+
+      <a href="#" class="logo">
+        <img src="./assets/images/GQ8Vaf01.svg" width="64" height="24" alt="logo">
+      </a>
+
+      <nav class="navbar" data-navbar>
+
+        <div class="navbar-top">
+          <a href="#" class="logo">
+            <img src="./assets/images/GQ8Vaf01.svg" width="64" height="24" alt="logo">
+          </a>
+
+          <button class="nav-close-btn" aria-label="close menu" data-nav-toggler>
+            <ion-icon name="close-outline" aria-hidden="true"></ion-icon>
+          </button>
+        </div>
+
+        <ul class="navbar-list">
+
+          <li>
+            <a href="#home" class="navbar-link">Home</a>
+          </li>
+
+          <li>
+            <a href="#about" class="navbar-link">About</a>
+          </li>
+
+          <li>
+            <a href="#contact" class="navbar-link">Contact</a>
+          </li>
+
+        </ul>
+
+        <div class="wrapper">
+          <a href="mailto:contact@kemboi.dev" class="contact-link">contact@kemboi.dev</a>
+
+          <a href="tel:+254721601159" class="contact-link">+254 721 601 159</a>
+        </div>
+
+        <ul class="social-list">
+
+
+          <li>
+            <a href="https://x.com/mykey611" class="social-link">
+              <i class="fa-brands fa-square-x-twitter"></i>
+            </a>
+          </li>
+
+          <li>
+            <li>
+              <a href="https://github.com/kemboi-73" class="social-link">
+                <i class="fa-brands fa-square-github"></i>
+              </a>
+            </li>
+
+          <li>
+            <a href="https://www.linkedin.com/in/kemboimikey?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" class="social-link">
+              <i class="fa-brands fa-linkedin"></i>
+            </a>
+          </li>
+
+          <li>
+            <a href="https://www.instagram.com/mykey611" class="social-link">
+              <i class="fa-brands fa-square-instagram"></i>
+            </a>
+          </li>
+
+          <li>
+            <a href="https://api.whatsapp.com/send/?phone=254721601159" class="social-link">
+              <i class="fa-brands fa-square-whatsapp"></i>
+            </a>
+          </li>
+
+        </ul>
+
+      </nav>
+
+      <button class="nav-open-btn" aria-label="open menu" data-nav-toggler>
+        <ion-icon name="menu-outline" aria-hidden="true"></ion-icon>
+      </button>
+
+      <div class="overlay" data-nav-toggler data-overlay></div>
+
     </div>
-  </nav>
+  </header>
 
   <main>
+    <article>
 
-    <section class="hero">
-      <div class="wrap">
-        <div class="hero-inner">
-          <div class="hero-photo">
-            <img src="./assets/images/me.jpg" alt="Mike Kemboi" onerror="this.style.display='none'">
-          </div>
-          <div class="hero-text">
-            <p class="eyebrow"><span>hi, I'm</span> Mike Kemboi</p>
-            <h1 class="hero-title">I like figuring out how things work — right now, that means code.</h1>
-            <p>I'm a student from Kenya with a steady curiosity for technology: how systems are built, how data moves, how a good idea becomes something you can actually use. This site is a running record of what I'm learning, not a finished résumé.</p>
-            <div class="btn-row">
-              <a href="assets/resumemike.pdf" class="btn btn-primary">My CV</a>
-              <a href="#contact" class="btn btn-ghost">Get in touch</a>
+      <!-- 
+        - #HERO
+      -->
+      
+
+      <section id="home" class="section hero" aria-label="home">
+        <div class="container">
+
+          <figure class="hero-banner">
+            <img src="./assets/images/me.jpg" width="560" height="540" alt="Mike" class="w-100"
+              data-reveal="top">
+
+          </figure>
+
+          <div class="hero-content">
+
+            <h1 class="h1 hero-title" data-reveal="top" data-reveal-delay="0.5s">
+              Hi, I'm Mike.
+            </h1>
+
+            <p class="section-text" data-reveal="top" data-reveal-delay="0.75s">
+              I like understanding how things work — how systems are built, how data moves, how an idea turns into something people can actually use.
+            </p>
+
+            <div class="btn-wrapper" data-reveal="top" data-reveal-delay="1s">
+              <a href="assets/resumemike.pdf" class="btn btn-primary">Download CV</a>
+
+              <a href="https://api.whatsapp.com/send/?phone=254721601159" class="btn btn-secondary">Contact Me</a>
             </div>
-          </div>
-        </div>
-      </div>
-    </section>
 
-    <section id="about" class="about">
-      <div class="wrap">
-        <div class="section-head">
-          <span class="marginalia">who I am</span>
-          <h2>About</h2>
-        </div>
-        <p>I grew up curious about the machinery behind ordinary things — how a payment goes through in seconds, how an app knows what to show you next. That curiosity turned into self-directed learning: reading documentation, breaking small projects on purpose, and rebuilding them until they made sense.</p>
-        <p>Discipline, teamwork, and steady improvement are the values that guide how I learn. I don't come to this with years of experience — I come with consistency, and a genuine want to understand things properly rather than just get them working.</p>
-        <p>I'm now looking to take that further through formal study, in an environment that can challenge how I think about technology and push me past what I've been able to teach myself alone.</p>
-      </div>
-    </section>
+          </div>
 
-    <section id="exploring">
-      <div class="wrap">
-        <div class="section-head">
-          <span class="marginalia">still learning</span>
-          <h2>What I'm exploring</h2>
         </div>
-        <div class="grid">
-          <div>
-            <span class="tag">01</span>
-            <h3>Web & systems</h3>
-            <p>Backend frameworks like Django and FastAPI were my starting point for understanding how web systems are actually put together — routing, data, and the logic in between.</p>
-          </div>
-          <div>
-            <span class="tag">02</span>
-            <h3>Systems & networks</h3>
-            <p>How applications talk to each other — APIs, data exchange, integrations — comes up in almost everything I build. It's a steep learning curve, and one I want to go deeper into.</p>
-          </div>
-          <div>
-            <span class="tag">03</span>
-            <h3>Data</h3>
-            <p>How data is organised and used to support a decision keeps showing up in my projects. Every one has added another step to that learning curve.</p>
-          </div>
-          <div>
-            <span class="tag">04</span>
-            <h3>Problem solving</h3>
-            <p>Breaking a complex problem into small, workable steps is a habit I've built through practice — one I want coursework and teamwork to keep sharpening.</p>
-          </div>
-        </div>
-      </div>
-    </section>
+      </section>
 
-    <section id="built">
-      <div class="wrap">
-        <div class="section-head">
-          <span class="marginalia">learning by doing</span>
-          <h2>Things I've built</h2>
-        </div>
+      <!-- 
+        - #ABOUT
+      -->
 
-        <div class="built-item">
-          <div class="built-head">
-            <h3>A point-of-sale system</h3>
-            <a href="https://github.com/kemboi-73" target="_blank" rel="noopener">View on GitHub →</a>
+      <section id="about" class="section about" aria-label="about">
+        <div class="container">
+
+          <div class="wrapper">
+
+            <div data-reveal="left">
+              <h2 class="h2 section-title">About Me</h2>
+
+              <p class="section-text">
+                I've always been curious about how ordinary things work — how a payment goes through in seconds, how an app knows what to show you next. That curiosity is mostly what's led me to teach myself, one small project at a time: reading documentation, taking things apart, and rebuilding them until they make sense to me.
+              </p>
+            </div>
+
           </div>
-          <p>Built to understand how a real, end-to-end web application fits together — sales, inventory, and customer records, with secure transactions and a checkout flow I designed and tested myself.</p>
-          <div class="stack">
-            <span>Python</span><span>Django</span><span>PostgreSQL</span><span>JavaScript</span>
+
+          <ul class="grid-list">
+
+            <li data-reveal="bottom">
+              <div class="about-card">
+
+                <div class="card-icon">
+                  <img src="./assets/images/web.svg" width="52" height="52" loading="lazy" alt="web design icon">
+                </div>
+
+                <h3 class="h4 card-title">Web & Systems</h3>
+
+                <p class="card-text">
+                  Backend frameworks like Django and FastAPI were my starting point for understanding how web systems are actually put together — routing, data, and the logic in between.
+                </p>
+
+              </div>
+            </li>
+
+            <li data-reveal="bottom" data-reveal-delay="0.25s">
+              <div class="about-card">
+
+                <div class="card-icon">
+                  <img src="./assets/images/api.svg" width="52" height="52" loading="lazy" alt="mobile design icon">
+                </div>
+
+                <h3 class="h4 card-title">Systems & Networks</h3>
+
+                <p class="card-text">
+                  How applications talk to each other — APIs, data exchange, integrations — comes up in almost everything I build. It's a steep learning curve, and one I want to go deeper into.
+                </p>
+
+              </div>
+            </li>
+
+            <li data-reveal="bottom" data-reveal-delay="0.5s">
+              <div class="about-card">
+
+                <div class="card-icon">
+                  <img src="./assets/images/ml.svg" width="52" height="52" loading="lazy"
+                    alt="web development icon">
+                </div>
+
+                <h3 class="h4 card-title">Data</h3>
+
+                <p class="card-text">
+                  How data is organised and used to support a decision keeps showing up in my projects. Every one has added another step to that learning curve.
+                </p>
+
+              </div>
+            </li>
+
+            <li data-reveal="bottom" data-reveal-delay="0.75s">
+              <div class="about-card">
+
+                <div class="card-icon">
+                  <img src="./assets/images/seo.svg" width="52" height="52" loading="lazy" alt="web seo icon">
+                </div>
+
+                <h3 class="h4 card-title">Problem Solving</h3>
+
+                <p class="card-text">
+                  Breaking a complex problem into small, workable steps is a habit I've built through practice — one I try to keep sharpening.
+                </p>
+
+              </div>
+            </li>
+
+          </ul>
+
+        </div>
+      </section>
+
+      <!-- 
+        - #CONTACT
+      -->
+
+      <section id="contact" class="section contact" aria-label="contact">
+        <div class="container">
+
+          <div class="contact-card">
+
+            <div class="contact-content" data-reveal="left">
+
+              <div class="card-icon">
+                <img src="./assets/images/mail.svg" width="44" height="44" loading="lazy" alt="envelop icon">
+              </div>
+
+              <h2 class="h2 section-title">Get in touch</h2>
+              <p class="contact-info">
+                <a href="mailto:contact@kemboi.dev" class="contact-link">contact@kemboi.dev</a>
+              </p>
+            </div>
+
+            <form action="https://formspree.io/mwpqlolr" method="POST" class="contact-form">
+              <div class="input-wrapper">
+                <input type="text" name="name" placeholder="Name *" required class="input-field" />
+                <input type="email" name="email_address" placeholder="Email *" required class="input-field" />
+                <input type="number" name="phone_number" placeholder="Phone Number *" required class="input-field" />
+              </div>
+              <textarea name="message" placeholder="Message *" required class="input-field"></textarea>
+              <button type="submit" class="btn">Send message</button>
+            </form>
+            
+            <!-- Status message -->
+            <div id="form-status" style="margin-top: 1rem; color: green; display: none;"></div>
+            
+
           </div>
-        </div>
 
-        <div class="built-item">
-          <div class="built-head">
-            <h3>M-Pesa Daraja integration</h3>
-            <a href="https://github.com/kemboi-73" target="_blank" rel="noopener">View on GitHub →</a>
-          </div>
-          <p>A Django project exploring Safaricom's M-Pesa API — initiating payments and checking transaction status. I built this to understand how two independent systems are made to trust and talk to each other.</p>
-          <div class="stack">
-            <span>Python</span><span>Django</span><span>REST API</span>
-          </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <section class="goals">
-      <div class="wrap">
-        <div class="section-head">
-          <span class="marginalia">looking ahead</span>
-          <h2>Why I want to study this</h2>
-        </div>
-        <blockquote>Everything I know so far, I've taught myself out of curiosity. I want to study IT formally to find out what I don't yet know I don't know.</blockquote>
-        <p>Self-teaching has taken me a good distance, but it has limits — gaps I can't always see from the outside. I'm looking for a programme that will test my thinking, put me alongside people who ask better questions than I do, and give the fundamentals I've been piecing together some real structure.</p>
-      </div>
-    </section>
-
-    <section id="contact">
-      <div class="wrap">
-        <div class="section-head">
-          <span class="marginalia">say hello</span>
-          <h2>Get in touch</h2>
-        </div>
-        <ul class="contact-list">
-          <li>
-            <span class="contact-label">Email</span>
-            <a class="contact-value" href="mailto:mike@kemboi.dev">mike@kemboi.dev</a>
-          </li>
-          <li>
-            <span class="contact-label">Phone</span>
-            <a class="contact-value" href="tel:+254721601159">+254 721 601 159</a>
-          </li>
-          <li>
-            <span class="contact-label">GitHub</span>
-            <a class="contact-value" href="https://github.com/kemboi-73" target="_blank" rel="noopener">kemboi-73</a>
-          </li>
-          <li>
-            <span class="contact-label">LinkedIn</span>
-            <a class="contact-value" href="https://www.linkedin.com/in/kemboimikey" target="_blank" rel="noopener">kemboimikey</a>
-          </li>
-        </ul>
-      </div>
-    </section>
-
+    </article>
   </main>
 
-  <footer>
-    © 2026 Mike Kemboi
+  <!-- 
+    - #FOOTER
+  -->
+
+  <footer class="footer">
+    <div class="container">
+
+      <p class="copyright">
+        © 2026 Kemboi. All rights reserved.
+      </p>
+
+      <ul class="social-list">
+
+        <li>
+          <a href="https://x.com/mykey611" class="social-link">
+            <i class="fa-brands fa-square-x-twitter"></i>
+          </a>
+        </li>
+
+        <li>
+          <a href="https://github.com/kemboi-73" class="social-link">
+            <i class="fa-brands fa-square-github"></i>
+          </a>
+        </li>
+
+        <li>
+          <a href="https://www.linkedin.com/in/kemboimikey?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" class="social-link">
+            <i class="fa-brands fa-linkedin"></i>
+          </a>
+        </li>
+
+        <li>
+          <a href="https://www.instagram.com/mykey611" class="social-link">
+            <i class="fa-brands fa-square-instagram"></i>
+          </a>
+        </li>
+
+        <li>
+          <a href="https://api.whatsapp.com/send/?phone=254721601159" class="social-link">
+            <i class="fa-brands fa-square-whatsapp"></i>
+          </a>
+        </li>
+
+      </ul>
+
+    </div>
   </footer>
 
+
+  <!-- 
+    - custom js link
+  -->
+  <script src="./assets/js/script.js"></script>
+
+  <!-- 
+    - ionicon link
+  -->
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
 </body>
+
+
 </html>
